@@ -1,0 +1,19 @@
+{
+    "name": "m2e/igord_custom_blog",
+    "authors": [
+        {
+            "name": "iadmitrencko",
+            "email": "iadmitrencko@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "symfony/dependency-injection": "^4.3",
+        "symfony/config": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Igord\\CustomBlog\\": "src/"
+        }
+    }
+}
