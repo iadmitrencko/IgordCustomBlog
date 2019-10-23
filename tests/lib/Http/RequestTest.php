@@ -2,7 +2,7 @@
 
 namespace Tests\lib\Http;
 
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase as TestCase;
 use \Igord\CustomBlog\lib\Http\Request as Request;
 
 class RequestTest extends TestCase

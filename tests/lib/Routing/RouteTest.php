@@ -2,7 +2,7 @@
 
 namespace Tests\lib\Routing;
 
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase as TestCase;
 use \Igord\CustomBlog\lib\Routing\Route as Route;
 use \Igord\CustomBlog\lib\Routing\Route\Param as RouteParam;
 
