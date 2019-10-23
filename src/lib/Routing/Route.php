@@ -37,7 +37,7 @@ class Route
         string $action,
         array $params = []
     ) {
-        $this->method     = $method;
+        $this->method     = strtoupper($method);
         $this->uri        = rtrim($uri, '/') . '/';
         $this->controller = $controller;
         $this->action     = $action;
