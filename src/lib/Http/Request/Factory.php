@@ -12,29 +12,11 @@ class Factory
     public function create(): \Igord\CustomBlog\lib\Http\Request
     {
         return new \Igord\CustomBlog\lib\Http\Request(
-            $this->getRequestMethod(),
-            $this->getRequestUri(),
+            $_SERVER['REQUEST_METHOD'],
+            $_SERVER['REQUEST_URI'],
             $_GET,
             $_POST
         );
-    }
-
-    // ########################################
-
-    /**
-     * @return string
-     */
-    private function getRequestMethod(): string
-    {
-        return strtoupper($_SERVER['REQUEST_METHOD']);
-    }
-
-    /**
-     * @return string
-     */
-    private function getRequestUri(): string
-    {
-        return rtrim($_SERVER['REQUEST_URI'], '/') . '/';
     }
 
     // ########################################

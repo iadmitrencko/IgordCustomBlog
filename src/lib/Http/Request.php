@@ -31,8 +31,8 @@ class Request
      */
     public function __construct(string $method, string $uri, array $params = [], array $body = [])
     {
-        $this->method = $method;
-        $this->uri    = $uri;
+        $this->method = strtoupper($method);
+        $this->uri    = rtrim($uri, '/') . '/';
         $this->params = $params;
         $this->body   = $body;
     }
