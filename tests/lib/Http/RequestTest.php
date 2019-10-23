@@ -14,6 +14,9 @@ class RequestTest extends TestCase
 
         $this->assertNotEquals('get', $request->getMethod());
         $this->assertEquals('GET', $request->getMethod());
+
+        $request = new \Igord\CustomBlog\lib\Http\Request('', '/');
+        $this->assertEquals('', $request->getMethod());
     }
 
     public function testUriParamPreparedCorrectly()
