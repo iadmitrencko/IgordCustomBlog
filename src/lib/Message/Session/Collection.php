@@ -51,6 +51,10 @@ class Collection implements \Igord\CustomBlog\lib\Message\Collection\BaseInterfa
      */
     public function getMessages(string $type = null): array
     {
+        if (!is_null($type)) {
+            $this->checkType($type);
+        }
+
         $messages = $this->session->get(self::SESSION_MESSAGES_KEY);
         if (is_null($messages)) {
             return [];
@@ -81,6 +85,10 @@ class Collection implements \Igord\CustomBlog\lib\Message\Collection\BaseInterfa
      */
     public function hasMessages(string $type = null): bool
     {
+        if (!is_null($type)) {
+            $this->checkType($type);
+        }
+
         $messages = $this->session->get(self::SESSION_MESSAGES_KEY);
         if (is_null($messages)) {
             return false;
@@ -89,8 +97,6 @@ class Collection implements \Igord\CustomBlog\lib\Message\Collection\BaseInterfa
         if (is_null($type) && !empty($messages)) {
             return true;
         }
-
-        $this->checkType($type);
 
         return array_key_exists($type, $messages);
     }
@@ -104,6 +110,10 @@ class Collection implements \Igord\CustomBlog\lib\Message\Collection\BaseInterfa
      */
     public function removeMessages(string $type = null): void
     {
+        if (!is_null($type)) {
+            $this->checkType($type);
+        }
+
         if (!$this->hasMessages()) {
             return;
         }
