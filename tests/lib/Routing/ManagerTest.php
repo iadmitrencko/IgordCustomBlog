@@ -59,7 +59,7 @@ class ManagerTest extends TestCase
         $this->assertEquals(48, $param->getValue());
     }
 
-    public function testRouteNotFind()
+    public function testRouteNotFound()
     {
         $collection = $this->createCollection();
 
